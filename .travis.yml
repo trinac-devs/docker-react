@@ -1,5 +1,5 @@
 sudo: required
-# language: generic
+language: generic
 
 # It installs docker on the machine
 services: 
