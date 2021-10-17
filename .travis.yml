@@ -1,0 +1,13 @@
+sudo: required
+language: generic
+
+# It installs docker on the machine
+services: 
+  - docker
+
+# Series of command to run before we deploy a project or run a test
+before_install:
+  - docker build -t codetraxx/docker-react -f Dockerfile.dev .
+  
+script:
+  - docker run -e CI=true codetraxx/docker-react npm run test
